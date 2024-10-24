@@ -30,6 +30,9 @@ namespace CompitoFormsJalba
                 {
                     toAdd = formBatterista.getStrumento();
                     batteristaCount++;
+
+                    lstBoxLista.Items.Add(toAdd.toString());
+                    strumenti.Add(toAdd);
                 }
 
             }
@@ -41,17 +44,19 @@ namespace CompitoFormsJalba
                 {
                     toAdd = formChitarra.getStrumento();
                     chitarraCount++;
+
+                    lstBoxLista.Items.Add(toAdd.toString());
+                    strumenti.Add(toAdd);
                 }
 
             }
             else
             {
                 MessageBox.Show("Seleziona uno strumento!");
-                return;
             }
 
-            lstBoxLista.Items.Add(toAdd.toString());
-            strumenti.Add(toAdd);
+            //lstBoxLista.Items.Add(toAdd.toString());
+            //strumenti.Add(toAdd); fixxx
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -133,13 +138,13 @@ namespace CompitoFormsJalba
                 string r;
                 switch ((strumenti[scelto] as CChitarra).CompareTo(strumenti[lstBoxLista.SelectedIndex] as CChitarra))
                 {
-                    case -1:
+                    case 1: //fix
                         r = $"Chitarra in posizione {scelto} suona meglio della chitarra in posizione {lstBoxLista.SelectedIndex}";
                         break;
                     case 0:
                         r = $"Le due chitarre suonano uguali";
                         break;
-                    case 1:
+                    case -1:
                         r = $"Chitarra in posizione {scelto} suona peggio della chitarra in posizione {lstBoxLista.SelectedIndex}";
                         break;
                     default:

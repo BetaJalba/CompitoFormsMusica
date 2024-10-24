@@ -24,18 +24,20 @@ namespace CompitoFormsJalba
         }
         public void increaseVolume(int amount) 
         {
-            volume += amount;
-            //volume max = 10
-            if (volume > 10)
+            //volume max = 10 //fix
+            if (volume + amount > 10)
                 volume = 10;
+            else
+                volume += amount;
         }
 
         public void decreaseVolume(int amount) 
         {
-            volume -= amount;
-            //volume min = 0
-            if (volume < 0)
+            //volume min = 0 //fix
+            if (volume - amount < 0)
                 volume = 0;
+            else
+                volume -= amount;
         }
 
         public abstract string toString();

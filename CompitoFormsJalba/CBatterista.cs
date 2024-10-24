@@ -21,7 +21,9 @@ namespace CompitoFormsJalba
 
         public string getName() 
         {
-            return name;
+            if (name != null)
+                return name;
+            return "Anonimo"; //fix
         }
 
         public void setName(string name) 
