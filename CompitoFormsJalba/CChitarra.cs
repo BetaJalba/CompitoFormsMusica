@@ -45,7 +45,7 @@ namespace CompitoFormsJalba
         {
             return (this.qualitaSuono > other.qualitaSuono) ? 1 : //primo precede
                    (this.qualitaSuono == other.qualitaSuono ? (this.volume > other.volume ? 1 : (this.volume == other.volume ? 0 : -1)) : //se uguale confronta il volume
-                   -1); //primo segue
+                   -1); //primo segue //fix
         }
 
         public override string toString()

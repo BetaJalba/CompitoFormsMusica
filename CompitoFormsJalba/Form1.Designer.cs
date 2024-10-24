@@ -36,6 +36,7 @@
             label1 = new Label();
             btnRemove = new Button();
             panel1 = new Panel();
+            btnPrimaChitarra = new Button();
             btnAddVolume = new Button();
             txtNuovoNome = new TextBox();
             button2 = new Button();
@@ -46,7 +47,16 @@
             button1 = new Button();
             lblOptions = new Label();
             label2 = new Label();
-            btnPrimaChitarra = new Button();
+            progressBar1 = new ProgressBar();
+            lblVolume = new Label();
+            lblSkill = new Label();
+            button3 = new Button();
+            button4 = new Button();
+            progressBar2 = new ProgressBar();
+            label3 = new Label();
+            button5 = new Button();
+            button6 = new Button();
+            progressBar3 = new ProgressBar();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -123,22 +133,30 @@
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(btnPrimaChitarra);
-            panel1.Controls.Add(btnAddVolume);
             panel1.Controls.Add(txtNuovoNome);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(btnCompare);
             panel1.Controls.Add(btnPlaying);
             panel1.Controls.Add(btnBatterista);
             panel1.Controls.Add(lblInfo);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(12, 141);
+            panel1.Location = new Point(12, 263);
             panel1.Name = "panel1";
             panel1.Size = new Size(365, 240);
             panel1.TabIndex = 7;
             // 
+            // btnPrimaChitarra
+            // 
+            btnPrimaChitarra.Location = new Point(196, 44);
+            btnPrimaChitarra.Name = "btnPrimaChitarra";
+            btnPrimaChitarra.Size = new Size(75, 41);
+            btnPrimaChitarra.TabIndex = 13;
+            btnPrimaChitarra.Text = "Prima Chitarra";
+            btnPrimaChitarra.UseVisualStyleBackColor = true;
+            btnPrimaChitarra.Click += btnPrimaChitarra_Click;
+            // 
             // btnAddVolume
             // 
-            btnAddVolume.Location = new Point(277, 15);
+            btnAddVolume.Location = new Point(221, 146);
             btnAddVolume.Name = "btnAddVolume";
             btnAddVolume.Size = new Size(75, 23);
             btnAddVolume.TabIndex = 12;
@@ -155,9 +173,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(277, 44);
+            button2.Location = new Point(302, 146);
             button2.Name = "button2";
-            button2.Size = new Size(75, 41);
+            button2.Size = new Size(75, 23);
             button2.TabIndex = 10;
             button2.Text = "Diminuisci volume";
             button2.UseVisualStyleBackColor = true;
@@ -165,7 +183,7 @@
             // 
             // btnCompare
             // 
-            btnCompare.Location = new Point(196, 44);
+            btnCompare.Location = new Point(277, 44);
             btnCompare.Name = "btnCompare";
             btnCompare.Size = new Size(75, 41);
             btnCompare.TabIndex = 4;
@@ -214,11 +232,11 @@
             // lblOptions
             // 
             lblOptions.AutoSize = true;
-            lblOptions.Location = new Point(12, 123);
+            lblOptions.Location = new Point(12, 245);
             lblOptions.Name = "lblOptions";
-            lblOptions.Size = new Size(56, 15);
+            lblOptions.Size = new Size(35, 15);
             lblOptions.TabIndex = 8;
-            lblOptions.Text = "Controlli:";
+            lblOptions.Text = "Print:";
             // 
             // label2
             // 
@@ -229,21 +247,107 @@
             label2.TabIndex = 9;
             label2.Text = "Max 5 elementi";
             // 
-            // btnPrimaChitarra
+            // progressBar1
             // 
-            btnPrimaChitarra.Location = new Point(196, 16);
-            btnPrimaChitarra.Name = "btnPrimaChitarra";
-            btnPrimaChitarra.Size = new Size(75, 23);
-            btnPrimaChitarra.TabIndex = 13;
-            btnPrimaChitarra.Text = "Prima Chitarra";
-            btnPrimaChitarra.UseVisualStyleBackColor = true;
-            btnPrimaChitarra.Click += btnPrimaChitarra_Click;
+            progressBar1.Location = new Point(68, 146);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(136, 23);
+            progressBar1.TabIndex = 10;
+            // 
+            // lblVolume
+            // 
+            lblVolume.AutoSize = true;
+            lblVolume.Location = new Point(12, 150);
+            lblVolume.Name = "lblVolume";
+            lblVolume.Size = new Size(50, 15);
+            lblVolume.TabIndex = 11;
+            lblVolume.Text = "Volume:";
+            // 
+            // lblSkill
+            // 
+            lblSkill.AutoSize = true;
+            lblSkill.Location = new Point(12, 179);
+            lblSkill.Name = "lblSkill";
+            lblSkill.Size = new Size(31, 15);
+            lblSkill.TabIndex = 15;
+            lblSkill.Text = "Skill:";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(221, 175);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 16;
+            button3.Text = "Aumenta Volume";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(302, 175);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 13;
+            button4.Text = "Diminuisci volume";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // progressBar2
+            // 
+            progressBar2.Location = new Point(68, 175);
+            progressBar2.Name = "progressBar2";
+            progressBar2.Size = new Size(136, 23);
+            progressBar2.TabIndex = 14;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 208);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 15);
+            label3.TabIndex = 19;
+            label3.Text = "Volume:";
+            // 
+            // button5
+            // 
+            button5.Location = new Point(221, 204);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 20;
+            button5.Text = "Aumenta Volume";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(302, 204);
+            button6.Name = "button6";
+            button6.Size = new Size(75, 23);
+            button6.TabIndex = 17;
+            button6.Text = "Diminuisci volume";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // progressBar3
+            // 
+            progressBar3.Location = new Point(68, 204);
+            progressBar3.Name = "progressBar3";
+            progressBar3.Size = new Size(136, 23);
+            progressBar3.TabIndex = 18;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(394, 396);
+            ClientSize = new Size(394, 521);
+            Controls.Add(label3);
+            Controls.Add(button5);
+            Controls.Add(button6);
+            Controls.Add(progressBar3);
+            Controls.Add(lblSkill);
+            Controls.Add(button3);
+            Controls.Add(button4);
+            Controls.Add(progressBar2);
+            Controls.Add(lblVolume);
+            Controls.Add(btnAddVolume);
+            Controls.Add(button2);
+            Controls.Add(progressBar1);
             Controls.Add(label2);
             Controls.Add(lblOptions);
             Controls.Add(panel1);
@@ -284,5 +388,15 @@
         private TextBox txtNuovoNome;
         private Button btnAddVolume;
         private Button btnPrimaChitarra;
+        private ProgressBar progressBar1;
+        private Label lblVolume;
+        private Label lblSkill;
+        private Button button3;
+        private Button button4;
+        private ProgressBar progressBar2;
+        private Label label3;
+        private Button button5;
+        private Button button6;
+        private ProgressBar progressBar3;
     }
 }

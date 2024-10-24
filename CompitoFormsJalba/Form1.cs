@@ -160,7 +160,7 @@ namespace CompitoFormsJalba
 
         private void btnPrimaChitarra_Click(object sender, EventArgs e)
         {
-            if (lstBoxLista.SelectedIndex != -1 && strumenti[lstBoxLista.SelectedIndex] is CChitarra) 
+            if (lstBoxLista.SelectedIndex != -1 && strumenti[lstBoxLista.SelectedIndex] is CChitarra)
             {
                 scelto = lstBoxLista.SelectedIndex;
             }
